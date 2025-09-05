@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Book Notes</title>
+</head>
+<body>
+  <h1>My Book Notes</h1>
+  <a href="/add">+ Add Book</a>
+  <% books.forEach(book => { %>
+    <div>
+      <h2><%= book.title %> by <%= book.author %></h2>
+      <img src="https://covers.openlibrary.org/b/olid/<%= book.open_library_id %>-M.jpg" alt="cover" />
+      <p><strong>Date Read:</strong> <%= book.date_read.toISOString().split('T')[0] %></p>
+      <p><strong>Rating:</strong> <%= book.rating %>/10</p>
+      <p><strong>Notes:</strong> <%= book.notes %></p>
+    </div>
+    <hr/>
+  <% }) %>
+</body>
+</html>
